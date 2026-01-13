@@ -19,14 +19,15 @@ jobs:
           java-version: '8'
           cache: maven
       # Step 3: Build and test using Maven
-      - name: Build and Test with Maven
+      - name: run the step only if branch name is main
+        if: github.ref == 'refs/heads/main'
         run: mvn clean test
 
   package-deploy:
     needs: build-test
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout source code
+      # step 1: Checkout source code
       - name: Checkout code
         uses: actions/checkout@v4
       # step 2: Test using Maven
