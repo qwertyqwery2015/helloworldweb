@@ -1,4 +1,4 @@
-name: Java Maven CI/CD Pipeline (Matrix)
+name: self
 on:
   push:
     branches:
@@ -11,7 +11,7 @@ on:
 jobs:
   build-test-deploy:
     name: Build & Test on Java ${{ matrix.java }}
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     strategy:
       fail-fast: false
