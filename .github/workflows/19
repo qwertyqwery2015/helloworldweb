@@ -1,4 +1,4 @@
-name: 2Java Maven CI/CD Pipeline
+name: 22Java Maven CI/CD Pipeline
 on:
   push:
     branches:
